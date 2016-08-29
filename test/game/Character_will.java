@@ -33,4 +33,12 @@ public class Character_will {
         assertEquals(15,arc.upAttackPoints());
         assertEquals(10,arc.resistance());
     }
+    @Test
+    public void put_One_Armor() {
+
+        Armor armor = new Armor(20,10);
+        assertEquals(20,armor.upDefensePoints());
+        assertEquals(10,armor.resistance());
+    }
+
 }
