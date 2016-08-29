@@ -26,4 +26,11 @@ public class Character_will {
         assertEquals(15,sword.upAttackPoints());
         assertEquals(10,sword.resistance());
     }
+    @Test
+    public void take_One_Arc() {
+
+        Arm arc = new Arc(15,10);
+        assertEquals(15,arc.upAttackPoints());
+        assertEquals(10,arc.resistance());
+    }
 }
