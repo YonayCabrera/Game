@@ -19,4 +19,11 @@ public class Character_will {
         assertEquals(200,blue.takePotion());
 
     }
+    @Test
+    public void take_One_Sword() {
+
+        Arm sword = new Sword(15,10);
+        assertEquals(15,sword.upAttackPoints());
+        assertEquals(10,sword.resistance());
+    }
 }
