@@ -2,14 +2,14 @@ package game;
 
 
 public class Blue extends Potion{
-    private int mana;
+    private int sp;
 
-    public Blue(int mana) {
+    public Blue(int sp) {
 
-        this.mana = mana;
+        this.sp = sp;
     }
 
     public int takePotion() {
-        return mana;
+        return sp;
     }
 }

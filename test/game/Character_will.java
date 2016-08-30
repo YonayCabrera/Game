@@ -39,6 +39,15 @@ public class Character_will {
         Armor armor = new Armor(20,10);
         assertEquals(20,armor.upDefensePoints());
         assertEquals(10,armor.resistance());
+
     }
+    @Test
+    public void have_All_Hp() {
+
+        Character character = new Character(200,200,5);
+
+
+    }
+
 
 }

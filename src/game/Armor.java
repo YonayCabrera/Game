@@ -1,7 +1,7 @@
 package game;
 
 
-public class Armor {
+public class Armor extends Inventory{
     private final int defensePoints;
     private final int resistence;
 

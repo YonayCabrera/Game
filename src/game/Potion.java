@@ -1,7 +1,7 @@
 package game;
 
 
-public abstract class Potion {
+public abstract class Potion extends Inventory{
 
 
     abstract int takePotion();
