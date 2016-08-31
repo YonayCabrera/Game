@@ -3,6 +3,7 @@ package game;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Character {
 
@@ -20,4 +21,9 @@ public class Character {
     }
 
 
+    public Set<Inventory> putInInventary(Inventory object) {
+        inventory.put(object,1);
+        Set keyset=inventory.keySet();
+        return keyset;
+    }
 }

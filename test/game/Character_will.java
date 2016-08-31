@@ -2,6 +2,10 @@ package game;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import static org.junit.Assert.assertEquals;
 
 public class Character_will {
@@ -42,10 +46,12 @@ public class Character_will {
 
     }
     @Test
-    public void have_All_Hp() {
-
+    public void have_Inventory() {
+        Map<Inventory,Integer> inventory = new HashMap<>();
+        inventory.put(new Arc(15,15),1);
         Character character = new Character(200,200,5);
-
+        Set keyset=inventory.keySet();
+        assertEquals(keyset,character.putInInventary(new Arc(15,15)));
 
     }
 
