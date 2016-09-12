@@ -20,12 +20,16 @@ public class Character {
         inventory = new HashMap<>();
     }
 
-    public Boolean addItem(Inventory inventories){
+    public void addItem(Inventory inventories){
         inventory.put(inventories,inventory.size()+1);
-        return true;
+
     }
     
     public Boolean getItem(Inventory inventories) {
         return inventory.containsKey(inventories);
+    }
+
+    public int size() {
+        return inventory.size();
     }
 }
