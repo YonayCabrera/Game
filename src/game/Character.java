@@ -20,7 +20,7 @@ public class Character {
         inventory = new HashMap<>();
     }
 
-    public Boolean putInInventory(Inventory inventories){
+    public Boolean addItem(Inventory inventories){
         inventory.put(inventories,inventory.size()+1);
         return true;
     }

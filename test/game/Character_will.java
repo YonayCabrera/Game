@@ -46,14 +46,14 @@ public class Character_will {
     @Test
     public void put_In_Inventory() {
         Character character = new Character(200,200,5);
-        assertEquals(true,character.putInInventory(new Bow(15,15)));
+        assertEquals(true,character.addItem(new Bow(15,15)));
 
     }
     @Test
-    public void get_Inventory() {
+    public void get_Item() {
         Character character = new Character(200,200,5);
         Inventory bow = new Bow(15,15);
-        character.putInInventory(bow);
+        character.addItem(bow);
         assertEquals(true,character.getItem(bow));
 
     }
