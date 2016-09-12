@@ -17,4 +17,9 @@ public class Armor extends Inventory{
     public int resistance() {
         return resistence;
     }
+
+    @Override
+    public String toString() {
+        return null;
+    }
 }

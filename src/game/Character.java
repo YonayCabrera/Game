@@ -17,13 +17,15 @@ public class Character {
         this.hp = hp;
         this.sp = sp;
         this.attack = attack;
-        inventory = new HashMap<Inventory, Integer>();
+        inventory = new HashMap<>();
     }
 
-
-    public Set<Inventory> putInInventary(Inventory object) {
-        inventory.put(object,1);
-        Set keyset=inventory.keySet();
-        return keyset;
+    public Boolean putInInventory(Inventory inventories){
+        inventory.put(inventories,inventory.size()+1);
+        return true;
+    }
+    
+    public Boolean getItem(Inventory inventories) {
+        return inventory.containsKey(inventories);
     }
 }

@@ -2,9 +2,7 @@ package game;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+
 
 import static org.junit.Assert.assertEquals;
 
@@ -33,7 +31,7 @@ public class Character_will {
     @Test
     public void take_One_Arc() {
 
-        Arm arc = new Arc(15,10);
+        Arm arc = new Bow(15,10);
         assertEquals(15,arc.upAttackPoints());
         assertEquals(10,arc.resistance());
     }
@@ -46,12 +44,17 @@ public class Character_will {
 
     }
     @Test
-    public void have_Inventory() {
-        Map<Inventory,Integer> inventory = new HashMap<>();
-        inventory.put(new Arc(15,15),1);
+    public void put_In_Inventory() {
         Character character = new Character(200,200,5);
-        Set keyset=inventory.keySet();
-        assertEquals(keyset,character.putInInventary(new Arc(15,15)));
+        assertEquals(true,character.putInInventory(new Bow(15,15)));
+
+    }
+    @Test
+    public void get_Inventory() {
+        Character character = new Character(200,200,5);
+        Inventory bow = new Bow(15,15);
+        character.putInInventory(bow);
+        assertEquals(true,character.getItem(bow));
 
     }
 

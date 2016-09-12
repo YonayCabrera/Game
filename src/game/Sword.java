@@ -20,4 +20,9 @@ public class Sword extends Arm{
     public int resistance() {
         return resistence;
     }
+
+    @Override
+    public String toString() {
+        return null;
+    }
 }

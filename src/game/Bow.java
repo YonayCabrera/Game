@@ -1,11 +1,11 @@
 package game;
 
 
-public class Arc extends Arm {
+public class Bow extends Arm {
     private final int attack;
     private final int resistance;
 
-    public Arc(int attack, int resistance) {
+    public Bow(int attack, int resistance) {
 
         this.attack = attack;
         this.resistance = resistance;
@@ -19,5 +19,10 @@ public class Arc extends Arm {
     @Override
     public int resistance() {
         return resistance;
+    }
+
+    @Override
+    public String toString() {
+        return null;
     }
 }

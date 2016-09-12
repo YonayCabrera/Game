@@ -12,4 +12,9 @@ public class Blue extends Potion{
     public int takePotion() {
         return sp;
     }
+
+    @Override
+    public String toString() {
+        return null;
+    }
 }
