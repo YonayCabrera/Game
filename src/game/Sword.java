@@ -12,8 +12,8 @@ public class Sword extends Arm{
     }
 
     @Override
-    public int upAttackPoints() {
-        return attack;
+    public int upAttackPoints(int basicAttack) {
+        return basicAttack + attack;
     }
 
     @Override

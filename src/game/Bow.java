@@ -12,8 +12,8 @@ public class Bow extends Arm {
     }
 
     @Override
-    public int upAttackPoints() {
-        return attack;
+    public int upAttackPoints(int basicAttack) {
+        return attack + basicAttack;
     }
 
     @Override

@@ -2,16 +2,16 @@ package game;
 
 
 public class Armor extends Inventory{
-    private final int defensePoints;
+    private final int defense;
     private final int resistence;
 
     public Armor(int defensePoints, int resistence) {
-        this.defensePoints = defensePoints;
+        this.defense = defensePoints;
         this.resistence = resistence;
     }
 
-    public int upDefensePoints() {
-        return defensePoints;
+    public int upDefensePoints(int defensePoints) {
+        return defense + defensePoints;
     }
 
     public int resistance() {
