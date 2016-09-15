@@ -63,4 +63,8 @@ public class Character {
         }
         return actualHP = actualHP - (attackOfEnemy - defensePoints);
     }
+
+    public int attackEnemy(Enemy dog) {
+        return dog.getDamage(attack);
+    }
 }

@@ -2,7 +2,7 @@ package game;
 
 
 public class Dog extends Enemy {
-    private final int actualHP;
+    private int actualHP;
     private final int attack;
     private final int defense;
 
@@ -16,5 +16,11 @@ public class Dog extends Enemy {
     @Override
     public int attack(Character character) {
         return character.getDamage(attack);
+    }
+
+    @Override
+    public int getDamage(int attackOfCharacter) {
+        if (defense >= attackOfCharacter) return actualHP;
+        return actualHP = actualHP - (attackOfCharacter - defense);
     }
 }

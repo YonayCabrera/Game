@@ -76,6 +76,12 @@ public class Character_will {
         assertEquals(20,character.getArmor(armor));
 
     }
+    @Test
+    public void attack(){
+        Character character = new Character(200,200,5,5);
+        Enemy dog = new Dog(200,5,0);
+        assertEquals(195,character.attackEnemy(dog));
+    }
 
 
 }
