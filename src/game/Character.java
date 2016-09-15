@@ -58,10 +58,8 @@ public class Character {
     }
 
     public int getDamage(int attackOfEnemy) {
-        if (defensePoints >= attackOfEnemy) {
-            return actualHP;
-        }
-        return actualHP = actualHP - (attackOfEnemy - defensePoints);
+        if (defensePoints >= attackOfEnemy) return actualHP;
+        return actualHP -= (attackOfEnemy - defensePoints);
     }
 
     public int attackEnemy(Enemy dog) {

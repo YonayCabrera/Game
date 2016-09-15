@@ -21,6 +21,6 @@ public class Dog extends Enemy {
     @Override
     public int getDamage(int attackOfCharacter) {
         if (defense >= attackOfCharacter) return actualHP;
-        return actualHP = actualHP - (attackOfCharacter - defense);
+        return actualHP -= (attackOfCharacter - defense);
     }
 }
