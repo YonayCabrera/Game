@@ -21,8 +21,5 @@ public class Sword extends Arm{
         return resistence;
     }
 
-    @Override
-    public String toString() {
-        return null;
-    }
+
 }

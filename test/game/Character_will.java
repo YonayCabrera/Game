@@ -11,14 +11,18 @@ public class Character_will {
     public void take_Red_Potion() {
 
         Potion red = new Red(200);
-        assertEquals(200,red.takePotion());
+        Character character = new Character(200,200,5,5);
+        character.addItem(red);
+        assertEquals(200,character.getHp(red));
 
     }
     @Test
     public void take_Blue_Potion() {
 
         Potion blue = new Blue(200);
-        assertEquals(200,blue.takePotion());
+        Character character = new Character(200,200,5,5);
+        character.addItem(blue);
+        assertEquals(200,character.getSP(blue));
 
     }
     @Test

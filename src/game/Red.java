@@ -9,12 +9,17 @@ public class Red extends Potion{
 
 
     @Override
-    int takePotion() {
-        return restoreHP;
+    int takePotion(int actualHP) {
+        if(actualHP == 200){
+            return actualHP;
+        }else {
+            if ((actualHP + restoreHP) > 200) {
+                return 200;
+            } else {
+                return actualHP + restoreHP;
+            }
+        }
     }
 
-    @Override
-    public String toString() {
-        return null;
-    }
+
 }

@@ -3,20 +3,20 @@ package game;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class Character {
 
-    private int hp;
-    private int sp;
+    private int actualHP;
+    private int actualSP;
     private int attack;
     private int defensePoints;
     private Map<Inventory,Integer> inventory;
 
+
     public Character(int hp, int sp, int attack, int defensePoints) {
 
-        this.hp = hp;
-        this.sp = sp;
+        this.actualHP = hp;
+        this.actualSP = sp;
         this.attack = attack;
         this.defensePoints = defensePoints;
         inventory = new HashMap<>();
@@ -27,20 +27,31 @@ public class Character {
 
     }
 
-    public int getArm(Inventory inventories) {
-        if(inventory.containsKey(inventories))
-            return ((Arm) inventories).upAttackPoints(attack);
+    public int getArm(Inventory inventory1) {
+        if(inventory.containsKey(inventory1))
+            return ((Arm) inventory1).upAttackPoints(attack);
         return attack;
 
     }
-    public int getArmor(Inventory inventories) {
-        if (inventory.containsKey(inventories))
-            return ((Armor) inventories).upDefensePoints(defensePoints);
+    public int getArmor(Inventory inventory1) {
+        if (inventory.containsKey(inventory1))
+            return ((Armor) inventory1).upDefensePoints(defensePoints);
         return defensePoints;
+    }
+    public int getHp(Inventory inventory1){
+        if (inventory.containsKey(inventory1))
+            return ((Red) inventory1).takePotion(actualHP);
+        return actualHP;
     }
 
 
     public int size() {
         return inventory.size();
+    }
+
+    public int getSP(Inventory inventory1) {
+        if (inventory.containsKey(inventory1))
+            return ((Blue) inventory1).takePotion(actualSP);
+        return actualSP;
     }
 }

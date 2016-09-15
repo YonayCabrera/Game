@@ -21,8 +21,5 @@ public class Bow extends Arm {
         return resistance;
     }
 
-    @Override
-    public String toString() {
-        return null;
-    }
+
 }
