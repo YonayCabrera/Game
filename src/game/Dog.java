@@ -12,4 +12,9 @@ public class Dog extends Enemy {
         this.attack = attack;
         this.defense = defense;
     }
+
+    @Override
+    public int attack(Character character) {
+        return character.getDamage(attack);
+    }
 }
