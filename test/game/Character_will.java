@@ -61,7 +61,7 @@ public class Character_will {
         Character character = new Character(200,200,5,5);
         Inventory bow = new Bow(15,15);
         character.addItem(bow);
-        assertEquals(true,character.getArm(bow));
+        assertEquals(20,character.getArm(bow));
 
     }
     @Test
@@ -69,7 +69,7 @@ public class Character_will {
         Character character = new Character(200,200,5,5);
         Inventory armor = new Armor(15,15);
         character.addItem(armor);
-        assertEquals(true,character.getArmor(armor));
+        assertEquals(20,character.getArmor(armor));
 
     }
 

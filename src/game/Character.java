@@ -27,15 +27,16 @@ public class Character {
 
     }
 
-    public void getArm(Inventory inventories) {
-        if(inventory.containsKey(inventories)) {
-            ((Arm) inventories).upAttackPoints(attack);
-        }
+    public int getArm(Inventory inventories) {
+        if(inventory.containsKey(inventories))
+            return ((Arm) inventories).upAttackPoints(attack);
+        return attack;
 
     }
-    public void getArmor(Inventory inventories) {
+    public int getArmor(Inventory inventories) {
         if (inventory.containsKey(inventories))
-            ((Armor) inventories).upDefensePoints(defensePoints);
+            return ((Armor) inventories).upDefensePoints(defensePoints);
+        return defensePoints;
     }
 
 
