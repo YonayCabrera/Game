@@ -20,10 +20,6 @@ public class Sword extends Arm{
 
     @Override
     public void doSomeThing(Character character) {
-        Character character1 = new Character(character.getActualHP(),
-                character.getActualSP(),
-                character.getAttack() + attack,
-                character.getDefensePoints());
-        character.apply(character1);
+        character.addAttackPoints(attack);
     }
 }

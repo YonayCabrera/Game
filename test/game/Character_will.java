@@ -52,7 +52,7 @@ public class Character_will {
     @Test
     public void put_One_Armor() {
 
-        Armor armor = new Armor(15,15);
+        Armor armor = new Armor(15);
         character.addItem(armor);
         character.getItem(armor);
         assertThat(character.getDefensePoints(), is (20));
@@ -74,7 +74,7 @@ public class Character_will {
     }
     @Test
     public void get_Armor() {
-        Armor armor = new Armor(15,15);
+        Armor armor = new Armor(15);
         character.addItem(armor);
         character.getItem(armor);
         assertThat(character.getDefensePoints(), is (20));
@@ -87,7 +87,7 @@ public class Character_will {
     }
     @Test
     public void get_someThing(){
-        Armor armor = new Armor(15,15);
+        Armor armor = new Armor(15);
         character.addItem(armor);
         character.getItem(armor);
         assertThat(character.getDefensePoints(), is (20));

@@ -3,25 +3,14 @@ package game;
 
 public class Armor extends Item {
     private final int defense;
-    private final int resistence;
 
-    public Armor(int defensePoints, int resistence) {
+    public Armor(int defensePoints) {
         this.defense = defensePoints;
-        this.resistence = resistence;
-    }
-
-
-    public int resistance() {
-        return resistence;
     }
 
 
     @Override
     public void doSomeThing(Character character) {
-        Character character1 = new Character(character.getActualHP(),
-                character.getActualSP(),
-                character.getAttack(),
-                character.getDefensePoints() + defense);
-        character.apply(character1);
+        character.addDefensePoints(defense);
     }
 }

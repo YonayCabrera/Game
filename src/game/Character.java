@@ -5,11 +5,14 @@ import java.util.*;
 
 public class Character {
 
+    private static final int MAX_MANA = 200;
+    private static final int MAX_LIVE = 200;
     private int actualHP;
     private int actualSP;
     private int attack;
     private int defensePoints;
     private List<Item> inventory;
+
 
 
     public Character(int hp, int sp, int attack, int defensePoints) {
@@ -56,14 +59,30 @@ public class Character {
     public int attackEnemy(Enemy dog) {
         return dog.getDamage(attack);
     }
-    public void getItem(Item item){
+
+    public void getItem(Item item) {
         item.doSomeThing(this);
     }
-    public void apply(Character character1){
-        defensePoints = character1.getDefensePoints();
-        attack = character1.getAttack();
-        actualHP=character1.getActualHP();
-        actualSP=character1.getActualSP();
+
+    public void health(int restoreHP) {
+        int health = getActualHP() + restoreHP;
+        if (health < MAX_LIVE) {
+            actualHP = health;
+        }
     }
 
+    public void restoreMana(int restoreSP) {
+        int mana = getActualSP() + restoreSP;
+        if (mana < MAX_MANA) {
+            actualSP = mana;
+        }
+    }
+
+    public void addAttackPoints(int attack) {
+        this.attack += attack;
+    }
+
+    public void addDefensePoints(int defense) {
+        this.defensePoints += defense;
+    }
 }
