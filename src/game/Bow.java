@@ -22,4 +22,8 @@ public class Bow extends Arm {
     }
 
 
+    @Override
+    public void doSomeThing(Character character) {
+
+    }
 }

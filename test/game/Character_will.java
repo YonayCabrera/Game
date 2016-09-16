@@ -4,8 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class Character_will {
 
@@ -87,6 +88,12 @@ public class Character_will {
         Enemy dog = new Dog(200,5,0);
         assertEquals(195,character.attackEnemy(dog));
     }
-
+    @Test
+    public void get_someThing(){
+        Armor armor = new Armor(15,15);
+        character.addItem(armor);
+        character.getItem(armor);
+        assertThat(character.getDefensePoints(), is (20));
+    }
 
 }

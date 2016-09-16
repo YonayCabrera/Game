@@ -22,4 +22,8 @@ public class Sword extends Arm{
     }
 
 
+    @Override
+    public void doSomeThing(Character character) {
+
+    }
 }

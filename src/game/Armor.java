@@ -1,7 +1,7 @@
 package game;
 
 
-public class Armor extends Inventory{
+public class Armor extends Item {
     private final int defense;
     private final int resistence;
 
@@ -12,7 +12,6 @@ public class Armor extends Inventory{
 
     public int upDefensePoints(int defensePoints) {
         int armor = defensePoints + defense;
-        Character.apply(armor);
         return armor;
     }
 
@@ -21,4 +20,12 @@ public class Armor extends Inventory{
     }
 
 
+    @Override
+    public void doSomeThing(Character character) {
+        Character character1 = new Character(character.getActualHP(),
+                character.getActualSP(),
+                character.getAttack(),
+                character.getDefensePoints() + defense);
+        character.apply(character1);
+    }
 }

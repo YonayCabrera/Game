@@ -22,4 +22,8 @@ public class Red extends Potion{
     }
 
 
+    @Override
+    public void doSomeThing(Character character) {
+
+    }
 }

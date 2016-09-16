@@ -12,7 +12,11 @@ public class Enemy_will {
 
     @Before
     public void setUp() throws Exception {
-        character = new CharacterBuilder().hp(200).sp(200).attack(5).defensePoints(5).createCharacter();
+        character = new CharacterBuilder()
+                .hp(200).sp(200)
+                .attack(5)
+                .defensePoints(5)
+                .createCharacter();
     }
 
     @Test
