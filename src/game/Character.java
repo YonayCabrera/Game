@@ -1,8 +1,7 @@
 package game;
 
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Character {
 
@@ -10,7 +9,7 @@ public class Character {
     private int actualSP;
     private int attack;
     private int defensePoints;
-    private Map<Inventory, Integer> inventory;
+    private List<Inventory> inventory;
 
 
     public Character(int hp, int sp, int attack, int defensePoints) {
@@ -19,30 +18,31 @@ public class Character {
         this.actualSP = sp;
         this.attack = attack;
         this.defensePoints = defensePoints;
-        inventory = new HashMap<>();
+        inventory = new ArrayList<>();
     }
 
     public void addItem(Inventory inventories) {
-        inventory.put(inventories, inventory.size() + 1);
+        inventory.add(inventories);
 
     }
 
-    public int getArm(Inventory inventory1) {
-        if (inventory.containsKey(inventory1))
-            return ((Arm) inventory1).upAttackPoints(attack);
+    public int getArm(Arm arm) {
+        if (inventory.contains(arm)) {
+            return (arm.upAttackPoints(attack));
+        }
         return attack;
 
     }
 
-    public int getArmor(Inventory inventory1) {
-        if (inventory.containsKey(inventory1))
-            return ((Armor) inventory1).upDefensePoints(defensePoints);
+    public int getArmor(Armor armor) {
+        if (inventory.contains(armor))
+            return (armor.upDefensePoints(defensePoints));
         return defensePoints;
     }
 
-    public int getHp(Inventory inventory1) {
-        if (inventory.containsKey(inventory1))
-            return ((Red) inventory1).takePotion(actualHP);
+    public int getHp(Potion red) {
+        if (inventory.contains(red))
+            return (red.takePotion(actualHP));
         return actualHP;
     }
 
@@ -51,9 +51,10 @@ public class Character {
         return inventory.size();
     }
 
-    public int getSP(Inventory inventory1) {
-        if (inventory.containsKey(inventory1))
-            return ((Blue) inventory1).takePotion(actualSP);
+    public int getSP(Potion blue) {
+        if (inventory.contains(blue)) {
+            return (blue.takePotion(actualSP));
+        }
         return actualSP;
     }
 
@@ -64,5 +65,8 @@ public class Character {
 
     public int attackEnemy(Enemy dog) {
         return dog.getDamage(attack);
+    }
+    public static void apply(int num){
+
     }
 }

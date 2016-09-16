@@ -11,7 +11,9 @@ public class Armor extends Inventory{
     }
 
     public int upDefensePoints(int defensePoints) {
-        return defense + defensePoints;
+        int armor = defensePoints + defense;
+        Character.apply(armor);
+        return armor;
     }
 
     public int resistance() {

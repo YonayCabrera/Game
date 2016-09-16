@@ -13,7 +13,12 @@ public class Character_will {
 
     @Before
     public void setUp() throws Exception {
-        character = new Character(200,200,5,5);
+        character = new CharacterBuilder()
+                .hp(200)
+                .sp(200)
+                .attack(5)
+                .defensePoints(5)
+                .createCharacter();
     }
 
     @Test
@@ -65,14 +70,14 @@ public class Character_will {
     }
     @Test
     public void get_Arm() {
-        Inventory bow = new Bow(15,15);
+        Arm bow = new Bow(15,15);
         character.addItem(bow);
         assertEquals(20,character.getArm(bow));
 
     }
     @Test
     public void get_Armor() {
-        Inventory armor = new Armor(15,15);
+        Armor armor = new Armor(15,15);
         character.addItem(armor);
         assertEquals(20,character.getArmor(armor));
 
