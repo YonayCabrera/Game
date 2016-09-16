@@ -10,10 +10,6 @@ public class Armor extends Item {
         this.resistence = resistence;
     }
 
-    public int upDefensePoints(int defensePoints) {
-        int armor = defensePoints + defense;
-        return armor;
-    }
 
     public int resistance() {
         return resistence;

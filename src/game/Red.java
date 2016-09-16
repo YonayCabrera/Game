@@ -8,22 +8,22 @@ public class Red extends Potion{
     }
 
 
-    @Override
-    int takePotion(int actualHP) {
-        if(actualHP == 200){
-            return actualHP;
-        }else {
-            if ((actualHP + restoreHP) > 200) {
-                return 200;
-            } else {
-                return actualHP + restoreHP;
-            }
-        }
-    }
-
 
     @Override
     public void doSomeThing(Character character) {
+        int live =200;
 
+        if(character.getActualHP() < 200){
+            if ((character.getActualHP() + restoreHP) > 200) {
+                live = 200;
+            } else {
+                live = character.getActualHP() + restoreHP;
+            }
+        }
+        Character character1 = new Character(live,
+                character.getActualSP(),
+                character.getAttack(),
+                character.getDefensePoints());
+        character.apply(character1);
     }
 }

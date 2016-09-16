@@ -27,7 +27,8 @@ public class Character_will {
 
         Potion red = new Red(200);
         character.addItem(red);
-        assertEquals(200, character.getHp(red));
+        character.getItem(red);
+        assertThat(character.getActualHP(), is (200));
 
     }
     @Test
@@ -35,7 +36,9 @@ public class Character_will {
 
         Potion blue = new Blue(200);
         character.addItem(blue);
-        assertEquals(200,character.getSP(blue));
+        character.getItem(blue);
+        assertThat(character.getActualSP(), is (200));
+
 
     }
     @Test
@@ -43,24 +46,16 @@ public class Character_will {
 
         Arm sword = new Sword(15,10);
         character.addItem(sword);
-        assertEquals(20,character.getArm(sword));
-        assertEquals(10,sword.resistance());
-    }
-    @Test
-    public void take_One_Arc() {
-
-        Arm bow = new Bow(15,10);
-        character.addItem(bow);
-        assertEquals(20,character.getArm(bow));
-        assertEquals(10,bow.resistance());
+        character.getItem(sword);
+        assertThat(character.getAttack(), is (20));
     }
     @Test
     public void put_One_Armor() {
 
-        Armor armor = new Armor(20,10);
+        Armor armor = new Armor(15,15);
         character.addItem(armor);
-        assertEquals(25,character.getArmor(armor));
-        assertEquals(10,armor.resistance());
+        character.getItem(armor);
+        assertThat(character.getDefensePoints(), is (20));
 
     }
     @Test
@@ -73,14 +68,16 @@ public class Character_will {
     public void get_Arm() {
         Arm bow = new Bow(15,15);
         character.addItem(bow);
-        assertEquals(20,character.getArm(bow));
+        character.getItem(bow);
+        assertThat(character.getAttack(), is (20));
 
     }
     @Test
     public void get_Armor() {
         Armor armor = new Armor(15,15);
         character.addItem(armor);
-        assertEquals(20,character.getArmor(armor));
+        character.getItem(armor);
+        assertThat(character.getDefensePoints(), is (20));
 
     }
     @Test

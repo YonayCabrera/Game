@@ -42,37 +42,11 @@ public class Character {
 
     }
 
-    public int getArm(Arm arm) {
-        if (inventory.contains(arm)) {
-            return (arm.upAttackPoints(attack));
-        }
-        return attack;
-
-    }
-
-    public int getArmor(Armor armor) {
-        if (inventory.contains(armor))
-            return (armor.upDefensePoints(defensePoints));
-        return defensePoints;
-    }
-
-    public int getHp(Potion red) {
-        if (inventory.contains(red))
-            return (red.takePotion(actualHP));
-        return actualHP;
-    }
-
 
     public int size() {
         return inventory.size();
     }
 
-    public int getSP(Potion blue) {
-        if (inventory.contains(blue)) {
-            return (blue.takePotion(actualSP));
-        }
-        return actualSP;
-    }
 
     public int getDamage(int attackOfEnemy) {
         if (defensePoints >= attackOfEnemy) return actualHP;

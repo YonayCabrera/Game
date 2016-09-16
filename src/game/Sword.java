@@ -11,10 +11,6 @@ public class Sword extends Arm{
         this.resistence = resistence;
     }
 
-    @Override
-    public int upAttackPoints(int basicAttack) {
-        return basicAttack + attack;
-    }
 
     @Override
     public int resistance() {
@@ -24,6 +20,10 @@ public class Sword extends Arm{
 
     @Override
     public void doSomeThing(Character character) {
-
+        Character character1 = new Character(character.getActualHP(),
+                character.getActualSP(),
+                character.getAttack() + attack,
+                character.getDefensePoints());
+        character.apply(character1);
     }
 }

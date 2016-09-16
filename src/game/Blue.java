@@ -9,21 +9,23 @@ public class Blue extends Potion{
         this.restoreSP = sp;
     }
 
-    public int takePotion(int actualSP) {
-        if(actualSP == 200){
-            return actualSP;
-        }else {
-            if ((actualSP + restoreSP) > 200) {
-                return 200;
-            } else {
-                return actualSP + restoreSP;
-            }
-        }
-    }
 
 
     @Override
     public void doSomeThing(Character character) {
+        int mana =200;
 
+        if(character.getActualSP() < 200){
+            if ((character.getActualSP() + restoreSP) > 200) {
+                mana = 200;
+            } else {
+                mana = character.getActualSP() + restoreSP;
+            }
+        }
+        Character character1 = new Character(character.getActualHP(),
+                mana,
+                character.getAttack(),
+                character.getDefensePoints());
+        character.apply(character1);
     }
 }
