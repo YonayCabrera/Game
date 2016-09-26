@@ -16,7 +16,6 @@ public class Character {
     private int positionY;
 
 
-
     public Character(int hp, int sp, int attack, int defensePoints, int positionX, int positionY) {
 
         this.actualHP = hp;
@@ -96,5 +95,14 @@ public class Character {
 
     public int getPositionY() {
         return positionY;
+    }
+
+    public void moveTo(World direction) {
+        direction.move(this);
+    }
+
+    public void position(int x, int y) {
+        positionX += x;
+        positionY += y;
     }
 }

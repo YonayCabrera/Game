@@ -109,4 +109,26 @@ public class Character_will {
         assertThat(character.getPositionY(), is(0));
     }
 
+    @Test
+    public void move_north() {
+        North north = new North(0, 1);
+        character.moveTo(north);
+        assertThat(character.getPositionX(), is(0));
+        assertThat(character.getPositionY(), is(1));
+    }
+
+    @Test
+    public void move_north_east_west_south() {
+        World north = new North(0, 1);
+        character.moveTo(north);
+        World east = new East(1, 0);
+        character.moveTo(east);
+        World west = new West(-1, 0);
+        character.moveTo(west);
+        World  south= new South(0, -1);
+        character.moveTo(south);
+        assertThat(character.getPositionX(), is(0));
+        assertThat(character.getPositionY(), is(0));
+    }
+
 }
