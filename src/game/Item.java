@@ -1,6 +1,5 @@
 package game;
 
 
-public abstract class Item {
-    public abstract void doSomeThing(Character character);
+public abstract class Item extends Inventory{
 }

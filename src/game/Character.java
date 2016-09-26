@@ -11,9 +11,10 @@ public class Character {
     private int actualSP;
     private int attack;
     private int defensePoints;
-    private List<Item> inventory;
+    private List<Item> equipment;
     private int positionX;
     private int positionY;
+    private List<Inventory> inventory;
 
 
     public Character(int hp, int sp, int attack, int defensePoints, int positionX, int positionY) {
@@ -24,6 +25,7 @@ public class Character {
         this.defensePoints = defensePoints;
         this.positionX = positionX;
         this.positionY = positionY;
+        equipment = new ArrayList<>();
         inventory = new ArrayList<>();
     }
 
@@ -43,13 +45,17 @@ public class Character {
         return defensePoints;
     }
 
-    public void addItem(Item inventories) {
-        inventory.add(inventories);
+    public void addItemToInventory(Inventory item) {
+        inventory.add(item);
 
     }
 
 
-    public int size() {
+    public int sizeOfEquipment() {
+        return equipment.size();
+    }
+
+    public int sizeOfInventory() {
         return inventory.size();
     }
 
@@ -63,7 +69,7 @@ public class Character {
         return dog.getDamage(attack);
     }
 
-    public void getItem(Item item) {
+    public void getItemOfInventory(Inventory item) {
         item.doSomeThing(this);
     }
 
@@ -104,5 +110,31 @@ public class Character {
     public void position(int x, int y) {
         positionX += x;
         positionY += y;
+    }
+
+    public void getArmOfInventory(Arm sword) {
+        for (Item arm : equipment) {
+            if (arm instanceof Arm) {
+                inventory.add(arm);
+                equipment.remove(arm);
+                break;
+            }
+            equipment.add(sword);
+        }
+        equipment.add(sword);
+        inventory.remove(sword);
+    }
+
+    public void getArmorOfInventory(Armor armor) {
+        for (Item armadura : equipment) {
+            if (armadura instanceof Armor) {
+                inventory.add(armadura);
+                equipment.remove(armadura);
+                break;
+            }
+            equipment.add(armor);
+        }
+        equipment.add(armor);
+        inventory.remove(armor);
     }
 }
