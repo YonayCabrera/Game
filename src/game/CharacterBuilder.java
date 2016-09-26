@@ -5,6 +5,8 @@ public class CharacterBuilder {
     private int sp;
     private int attack;
     private int defensePoints;
+    private int positionX;
+    private int positionY;
 
     public CharacterBuilder hp(int hp) {
         this.hp = hp;
@@ -26,7 +28,17 @@ public class CharacterBuilder {
         return this;
     }
 
+    public CharacterBuilder positionX(int positionX) {
+        this.positionX = positionX;
+        return this;
+    }
+
+    public CharacterBuilder positionY(int positionY){
+        this.positionY = positionY;
+        return this;
+    }
+
     public Character createCharacter() {
-        return new Character(hp, sp, attack, defensePoints);
+        return new Character(hp, sp, attack, defensePoints, positionX, positionY);
     }
 }

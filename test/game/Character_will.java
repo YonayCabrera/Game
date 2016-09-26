@@ -19,6 +19,8 @@ public class Character_will {
                 .sp(200)
                 .attack(5)
                 .defensePoints(5)
+                .positionX(0)
+                .positionY(0)
                 .createCharacter();
     }
 
@@ -28,69 +30,83 @@ public class Character_will {
         Potion red = new Red(200);
         character.addItem(red);
         character.getItem(red);
-        assertThat(character.getActualHP(), is (200));
+        assertThat(character.getActualHP(), is(200));
 
     }
+
     @Test
     public void take_Blue_Potion() {
 
         Potion blue = new Blue(200);
         character.addItem(blue);
         character.getItem(blue);
-        assertThat(character.getActualSP(), is (200));
+        assertThat(character.getActualSP(), is(200));
 
 
     }
+
     @Test
     public void take_One_Sword() {
 
-        Arm sword = new Sword(15,10);
+        Arm sword = new Sword(15, 10);
         character.addItem(sword);
         character.getItem(sword);
-        assertThat(character.getAttack(), is (20));
+        assertThat(character.getAttack(), is(20));
     }
+
     @Test
     public void put_One_Armor() {
 
         Armor armor = new Armor(15);
         character.addItem(armor);
         character.getItem(armor);
-        assertThat(character.getDefensePoints(), is (20));
+        assertThat(character.getDefensePoints(), is(20));
 
     }
+
     @Test
     public void put_In_Inventory() {
-        character.addItem(new Bow(15,15));
-        assertEquals(1,character.size());
+        character.addItem(new Bow(15, 15));
+        assertEquals(1, character.size());
 
     }
+
     @Test
     public void get_Arm() {
-        Arm bow = new Bow(15,15);
+        Arm bow = new Bow(15, 15);
         character.addItem(bow);
         character.getItem(bow);
-        assertThat(character.getAttack(), is (20));
+        assertThat(character.getAttack(), is(20));
 
     }
+
     @Test
     public void get_Armor() {
         Armor armor = new Armor(15);
         character.addItem(armor);
         character.getItem(armor);
-        assertThat(character.getDefensePoints(), is (20));
+        assertThat(character.getDefensePoints(), is(20));
 
     }
+
     @Test
-    public void attack(){
-        Enemy dog = new Dog(200,5,0);
-        assertEquals(195,character.attackEnemy(dog));
+    public void attack() {
+        Enemy dog = new Dog(200, 5, 0);
+        assertEquals(195, character.attackEnemy(dog));
     }
+
     @Test
-    public void get_someThing(){
+    public void get_someThing() {
         Armor armor = new Armor(15);
         character.addItem(armor);
         character.getItem(armor);
-        assertThat(character.getDefensePoints(), is (20));
+        assertThat(character.getDefensePoints(), is(20));
+    }
+
+    @Test
+    public void get_position() {
+        assertThat(character.getPositionX(), is(0));
+        assertThat(character.getPositionY(), is(0));
     }
 
 }

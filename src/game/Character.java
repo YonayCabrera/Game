@@ -12,15 +12,19 @@ public class Character {
     private int attack;
     private int defensePoints;
     private List<Item> inventory;
+    private int positionX;
+    private int positionY;
 
 
 
-    public Character(int hp, int sp, int attack, int defensePoints) {
+    public Character(int hp, int sp, int attack, int defensePoints, int positionX, int positionY) {
 
         this.actualHP = hp;
         this.actualSP = sp;
         this.attack = attack;
         this.defensePoints = defensePoints;
+        this.positionX = positionX;
+        this.positionY = positionY;
         inventory = new ArrayList<>();
     }
 
@@ -84,5 +88,13 @@ public class Character {
 
     public void addDefensePoints(int defense) {
         this.defensePoints += defense;
+    }
+
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
     }
 }
