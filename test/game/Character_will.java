@@ -29,7 +29,7 @@ public class Character_will {
 
         Potion red = new Red(200);
         character.addItemToInventory(red);
-        character.getItemOfInventory(red);
+        character.getPotionOfInventory(red);
         assertThat(character.getActualHP(), is(200));
 
     }
@@ -39,7 +39,7 @@ public class Character_will {
 
         Potion blue = new Blue(200);
         character.addItemToInventory(blue);
-        character.getItemOfInventory(blue);
+        character.getPotionOfInventory(blue);
         assertThat(character.getActualSP(), is(200));
 
 
@@ -50,7 +50,7 @@ public class Character_will {
 
         Arm sword = new Sword(15, 10);
         character.addItemToInventory(sword);
-        character.getItemOfInventory(sword);
+        character.getArmOfInventory(sword);
         assertThat(character.getAttack(), is(20));
     }
 
@@ -59,7 +59,7 @@ public class Character_will {
 
         Armor armor = new Armor(15);
         character.addItemToInventory(armor);
-        character.getItemOfInventory(armor);
+        character.getArmorOfInventory(armor);
         assertThat(character.getDefensePoints(), is(20));
 
     }
@@ -75,7 +75,7 @@ public class Character_will {
     public void get_Arm() {
         Arm bow = new Bow(15, 15);
         character.addItemToInventory(bow);
-        character.getItemOfInventory(bow);
+        character.getArmOfInventory(bow);
         assertThat(character.getAttack(), is(20));
 
     }
@@ -84,7 +84,7 @@ public class Character_will {
     public void get_Armor() {
         Armor armor = new Armor(15);
         character.addItemToInventory(armor);
-        character.getItemOfInventory(armor);
+        character.getArmorOfInventory(armor);
         assertThat(character.getDefensePoints(), is(20));
 
     }
@@ -99,7 +99,7 @@ public class Character_will {
     public void get_someThing() {
         Armor armor = new Armor(15);
         character.addItemToInventory(armor);
-        character.getItemOfInventory(armor);
+        character.getArmorOfInventory(armor);
         assertThat(character.getDefensePoints(), is(20));
     }
 

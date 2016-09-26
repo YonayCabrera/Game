@@ -69,8 +69,8 @@ public class Character {
         return dog.getDamage(attack);
     }
 
-    public void getItemOfInventory(Inventory item) {
-        item.doSomeThing(this);
+    public void getPotionOfInventory(Inventory potion) {
+        potion.doSomeThing(this);
     }
 
     public void health(int restoreHP) {
