@@ -22,4 +22,9 @@ public class Bow extends Arm {
     public void doSomeThing(Character character) {
         character.addAttackPoints(attack);
     }
+
+    @Override
+    public void out(Character character) {
+        character.decrementAttackPoints(attack);
+    }
 }

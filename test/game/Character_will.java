@@ -140,6 +140,7 @@ public class Character_will {
         character.addItemToInventory(bow);
         character.getArmOfInventory(bow);
         assertThat(character.sizeOfEquipment(), is(1));
+        assertThat(character.getAttack(),is(20));
     }
 
     @Test
@@ -159,6 +160,7 @@ public class Character_will {
         character.addItemToInventory(armor2);
         character.getArmorOfInventory(armor2);
         assertThat(character.sizeOfEquipment(), is(1));
+        assertThat(character.getDefensePoints(), is(20));
     }
 }
 

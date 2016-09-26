@@ -13,4 +13,9 @@ public class Armor extends Item {
     public void doSomeThing(Character character) {
         character.addDefensePoints(defense);
     }
+
+    @Override
+    public void out(Character character) {
+        character.decrementDeffensePoints(defense);
+    }
 }

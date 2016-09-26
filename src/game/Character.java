@@ -113,28 +113,49 @@ public class Character {
     }
 
     public void getArmOfInventory(Arm sword) {
-        for (Item arm : equipment) {
+        List<Item> actualEquipament = equipment;
+
+        for (Item arm : actualEquipament) {
             if (arm instanceof Arm) {
-                inventory.add(arm);
-                equipment.remove(arm);
-                break;
+                addAndRemoveItems(sword,arm);
+
             }
-            equipment.add(sword);
         }
-        equipment.add(sword);
+        if(equipment.isEmpty()) {
+            equipment.add(sword);
+            sword.doSomeThing(this);
+        }
         inventory.remove(sword);
     }
 
     public void getArmorOfInventory(Armor armor) {
-        for (Item armadura : equipment) {
+        List<Item> actualEquipament = equipment;
+        for (Item armadura : actualEquipament) {
             if (armadura instanceof Armor) {
-                inventory.add(armadura);
-                equipment.remove(armadura);
-                break;
+                addAndRemoveItems(armor, armadura);
+
             }
-            equipment.add(armor);
         }
-        equipment.add(armor);
+        if(equipment.isEmpty()) {
+            equipment.add(armor);
+            armor.doSomeThing(this);
+        }
         inventory.remove(armor);
+    }
+
+    private void addAndRemoveItems(Item item, Item armadura) {
+        inventory.add(armadura);
+        equipment.add(item);
+        item.doSomeThing(this);
+        armadura.out(this);
+        equipment.remove(armadura);
+    }
+
+    public void decrementAttackPoints(int attack) {
+        this.attack -= attack;
+    }
+
+    public void decrementDeffensePoints(int defense) {
+        this.defensePoints -= defense;
     }
 }
