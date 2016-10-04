@@ -1,7 +1,7 @@
 package game;
 
 
-public class Bow extends Arm {
+public class Bow extends Weapon {
     private final int attack;
     private final int resistance;
 

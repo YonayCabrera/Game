@@ -1,10 +1,10 @@
 package game;
 
 
-public class Red extends Potion {
+public class PotionRed extends Potion {
     private int restoreHP;
 
-    public Red(int restaureHP) {
+    public PotionRed(int restaureHP) {
         this.restoreHP = restaureHP;
     }
 

@@ -1,14 +1,15 @@
 package game;
 
+
 import org.junit.Before;
 import org.junit.Test;
-
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class Character_will {
+
 
     private Character character;
 
@@ -27,7 +28,7 @@ public class Character_will {
     @Test
     public void take_Red_Potion() {
 
-        Potion red = new Red(200);
+        Potion red = new PotionRed(200);
         character.addItemToInventory(red);
         character.getPotionOfInventory(red);
         assertThat(character.getActualHP(), is(200));
@@ -37,7 +38,7 @@ public class Character_will {
     @Test
     public void take_Blue_Potion() {
 
-        Potion blue = new Blue(200);
+        Potion blue = new PotionBlue(200);
         character.addItemToInventory(blue);
         character.getPotionOfInventory(blue);
         assertThat(character.getActualSP(), is(200));
@@ -48,9 +49,9 @@ public class Character_will {
     @Test
     public void take_One_Sword() {
 
-        Arm sword = new Sword(15, 10);
+        Weapon sword = new Sword(15, 10);
         character.addItemToInventory(sword);
-        character.getArmOfInventory(sword);
+        character.equipWeapon(sword);
         assertThat(character.getAttack(), is(20));
     }
 
@@ -59,7 +60,7 @@ public class Character_will {
 
         Armor armor = new Armor(15);
         character.addItemToInventory(armor);
-        character.getArmorOfInventory(armor);
+        character.equipArmor(armor);
         assertThat(character.getDefensePoints(), is(20));
 
     }
@@ -73,9 +74,9 @@ public class Character_will {
 
     @Test
     public void get_Arm() {
-        Arm bow = new Bow(15, 15);
+        Weapon bow = new Bow(15, 15);
         character.addItemToInventory(bow);
-        character.getArmOfInventory(bow);
+        character.equipWeapon(bow);
         assertThat(character.getAttack(), is(20));
 
     }
@@ -84,7 +85,7 @@ public class Character_will {
     public void get_Armor() {
         Armor armor = new Armor(15);
         character.addItemToInventory(armor);
-        character.getArmorOfInventory(armor);
+        character.equipArmor(armor);
         assertThat(character.getDefensePoints(), is(20));
 
     }
@@ -99,7 +100,7 @@ public class Character_will {
     public void get_someThing() {
         Armor armor = new Armor(15);
         character.addItemToInventory(armor);
-        character.getArmorOfInventory(armor);
+        character.equipArmor(armor);
         assertThat(character.getDefensePoints(), is(20));
     }
 
@@ -111,7 +112,7 @@ public class Character_will {
 
     @Test
     public void move_north() {
-        North north = new North(0, 1);
+        North north = new North();
         character.moveTo(north);
         assertThat(character.getPositionX(), is(0));
         assertThat(character.getPositionY(), is(1));
@@ -119,35 +120,35 @@ public class Character_will {
 
     @Test
     public void move_north_east_west_south() {
-        World north = new North(0, 1);
+        World north = new North();
         character.moveTo(north);
-        World east = new East(1, 0);
+        World east = new East();
         character.moveTo(east);
-        World west = new West(-1, 0);
+        World west = new West();
         character.moveTo(west);
-        World south = new South(0, -1);
+        World south = new South();
         character.moveTo(south);
         assertThat(character.getPositionX(), is(0));
         assertThat(character.getPositionY(), is(0));
     }
 
     @Test
-    public void equipment_two_arms() {
-        Arm sword = new Sword(15, 15);
-        Arm bow = new Bow(15, 15);
+    public void equipment_two_weapons() {
+        Weapon sword = new Sword(15, 15);
+        Weapon bow = new Bow(15, 15);
         character.addItemToInventory(sword);
-        character.getArmOfInventory(sword);
+        character.equipWeapon(sword);
         character.addItemToInventory(bow);
-        character.getArmOfInventory(bow);
+        character.equipWeapon(bow);
         assertThat(character.sizeOfEquipment(), is(1));
         assertThat(character.getAttack(),is(20));
     }
 
     @Test
-    public void equipment_one_arm() {
-        Arm sword = new Sword(15, 15);
+    public void equipment_one_weapon() {
+        Weapon sword = new Sword(15, 15);
         character.addItemToInventory(sword);
-        character.getArmOfInventory(sword);
+        character.equipWeapon(sword);
         assertThat(character.sizeOfEquipment(), is(1));
     }
 
@@ -156,9 +157,9 @@ public class Character_will {
         Armor armor1 = new Armor(15);
         Armor armor2 = new Armor(15);
         character.addItemToInventory(armor1);
-        character.getArmorOfInventory(armor1);
+        character.equipArmor(armor1);
         character.addItemToInventory(armor2);
-        character.getArmorOfInventory(armor2);
+        character.equipArmor(armor2);
         assertThat(character.sizeOfEquipment(), is(1));
         assertThat(character.getDefensePoints(), is(20));
     }

@@ -112,11 +112,11 @@ public class Character {
         positionY += y;
     }
 
-    public void getArmOfInventory(Arm sword) {
+    public void equipWeapon(Weapon sword) {
         List<Item> actualEquipament = equipment;
 
         for (Item arm : actualEquipament) {
-            if (arm instanceof Arm) {
+            if (arm instanceof Weapon) {
                 addAndRemoveItems(sword,arm);
 
             }
@@ -128,7 +128,7 @@ public class Character {
         inventory.remove(sword);
     }
 
-    public void getArmorOfInventory(Armor armor) {
+    public void equipArmor(Armor armor) {
         List<Item> actualEquipament = equipment;
         for (Item armadura : actualEquipament) {
             if (armadura instanceof Armor) {
